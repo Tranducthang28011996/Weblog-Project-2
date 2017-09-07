@@ -1,0 +1,2 @@
+rake eslint:print_config
+rake eslint:print_config[true]
