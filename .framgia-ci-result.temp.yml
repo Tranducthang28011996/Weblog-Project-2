@@ -12,11 +12,11 @@ eslint:
   ignore: false
 rails_best_practices:
   comment: true
-  exit_code: 0
+  exit_code: 256
   ignore: false
 reek:
   comment: true
-  exit_code: 0
+  exit_code: 512
   ignore: false
 rspec:
   comment: true
@@ -24,9 +24,9 @@ rspec:
   ignore: false
 rubocop:
   comment: true
-  exit_code: 0
+  exit_code: 256
   ignore: false
 scss-lint:
   comment: true
-  exit_code: 0
+  exit_code: 20736
   ignore: false
