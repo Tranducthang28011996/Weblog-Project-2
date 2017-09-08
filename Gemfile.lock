@@ -71,6 +71,7 @@ GEM
     bundler-audit (0.6.0)
       bundler (~> 1.2)
       thor (~> 0.18)
+    byebug (9.1.0)
     code_analyzer (0.4.8)
       sexp_processor
     codeclimate-engine-rb (0.4.0)
@@ -87,7 +88,11 @@ GEM
     coffee-script-source (1.12.2)
     colorize (0.8.1)
     concurrent-ruby (1.0.5)
+    config (1.4.0)
+      activesupport (>= 3.0)
+      deep_merge (~> 1.1.1)
     database_cleaner (1.6.1)
+    deep_merge (1.1.1)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     devise (4.3.0)
@@ -108,6 +113,8 @@ GEM
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     formatador (0.2.5)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -334,11 +341,14 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.7)
   brakeman
   bundler-audit
+  byebug
   coffee-rails (~> 4.2)
+  config
   database_cleaner
   devise
   eslint-rails!
   factory_girl_rails
+  font-awesome-rails
   guard-rspec
   jbuilder (~> 2.5)
   jquery-rails
