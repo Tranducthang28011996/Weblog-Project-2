@@ -1,0 +1,19 @@
+<div class="header"></div>
+<div class="menuwrap">
+  <%= link_to root_path do %>
+    <div class="menu"></div>
+  <% end %>
+  <%= link_to root_path do %>
+    <div class="menu-home"></div>
+  <% end %>
+  <div class="menu-help"></div>
+  <div class="menu-about">
+  </div>
+  <% if user_signed_in? %>
+    <div class="menu-right-logged"></div>
+  <% else %>
+    <%= link_to new_user_registration_path do %>
+      <div class="menu-right"></div>
+    <% end %>
+  <% end %>
+</div>

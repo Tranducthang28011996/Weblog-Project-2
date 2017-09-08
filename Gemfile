@@ -7,6 +7,8 @@ end
 
 gem "coffee-rails", "~> 4.2"
 gem "jbuilder", "~> 2.5"
+gem "jbuilder", "~> 2.5"
+gem "jquery-rails"
 gem "jquery-rails"
 gem "mysql2", ">= 0.3.18", "< 0.5"
 gem "puma", "~> 3.7"
@@ -27,17 +29,24 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "database_cleaner"
   gem "factory_girl_rails"
+  gem "factory_girl_rails"
   gem "guard-rspec", require: false
   gem "jshint"
+  gem "listen", ">= 3.0.5", "< 3.2"
   gem "listen", ">= 3.0.5", "< 3.2"
   gem "railroady"
   gem "reek"
   gem "rspec"
+  gem "rspec"
   gem "rspec-collection_matchers"
+  gem "rspec-collection_matchers"
+  gem "rspec-rails"
   gem "rspec-rails"
   gem "rubocop", "~> 0.35.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "spring"
+  gem "spring"
+  gem "spring-watcher-listen", "~> 2.0.0"
   gem "spring-watcher-listen", "~> 2.0.0"
 end
 
