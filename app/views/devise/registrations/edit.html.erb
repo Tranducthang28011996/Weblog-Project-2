@@ -8,6 +8,14 @@
 
         <%= devise_error_messages! %>
 
+        <%= f.label :username %>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-user"></span>
+          </span>
+          <%= f.text_field :username, class: "form-control", autofocus: true %>
+        </div>
+
         <%= f.label :email %>
         <div class="input-group">
           <span class="input-group-addon">

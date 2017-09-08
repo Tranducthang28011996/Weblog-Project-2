@@ -29,4 +29,3 @@ rubocop:
 scss-lint:
   comment: true
   exit_code: 256
-  ignore: false
