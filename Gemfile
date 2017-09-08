@@ -13,12 +13,13 @@ gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
+gem "jquery-rails"
 
 group :development do
+  gem "web-console", ">= 3.3.0"
 end
 
 group :development, :test do
-  gem "web-console", ">= 3.3.0"
   gem "listen", ">= 3.0.5", "< 3.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
@@ -51,3 +52,5 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "rails_best_practices"
 gem "scss_lint_reporter_checkstyle", require: false
 gem "eslint-rails", git: "https://github.com/octoberstorm/eslint-rails"
+gem "devise"
+gem "bootstrap-sass", "3.3.7"
