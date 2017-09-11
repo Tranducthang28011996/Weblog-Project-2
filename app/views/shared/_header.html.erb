@@ -1,19 +1,16 @@
 <div class="header"></div>
 <div class="menuwrap">
-  <%= link_to root_path do %>
-    <div class="menu"></div>
-  <% end %>
-  <%= link_to root_path do %>
-    <div class="menu-home"></div>
-  <% end %>
-  <div class="menu-help"></div>
-  <div class="menu-about">
-  </div>
-  <% if user_signed_in? %>
-    <div class="menu-right-logged"></div>
-  <% else %>
-    <%= link_to new_user_registration_path do %>
-      <div class="menu-right"></div>
-    <% end %>
-  <% end %>
+  <ul class="menu-header">
+    <li>
+      <%= link_to t("index.home"), root_path %>
+    </li>
+    <li><a href="#"><%= t "index.help" %></a></li>
+    <li><a href="#"><%= t "index.about" %></a></li>
+    <li><input type="text"></li>
+    <li><%= link_to "link text...", user_registration_path, method: :delete %></li>
+    <li style="float: right;">
+      <%= link_to  t("devise.sessions"), new_user_registration_path %>
+    </li>
+    <li style="float: right;"><a href="#"><%= t "index.user" %></a></li>
+  </ul>
 </div>

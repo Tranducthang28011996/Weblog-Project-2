@@ -46,3 +46,11 @@ en:
       resend_unlock: "Resend unlock instructions"
   mailers:
     subject: "User Mailer Email"
+  index:
+    about: "About"
+    btn-read-more: "Read More"
+    help: "Help"
+    home: "Home"
+    user: "Users"
+    errors: "errors"
+

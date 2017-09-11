@@ -67,6 +67,7 @@ end
 gem "bootstrap-sass", "3.3.7"
 gem "bootstrap-sass", "3.3.7"
 gem "config"
+gem "delayed_job_active_record"
 gem "devise"
 gem "devise"
 gem "eslint-rails", git: "https://github.com/octoberstorm/eslint-rails"
@@ -76,3 +77,4 @@ gem "rails_best_practices"
 gem "scss_lint", require: false
 gem "scss_lint_reporter_checkstyle", require: false
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "delayed_job_active_record"
