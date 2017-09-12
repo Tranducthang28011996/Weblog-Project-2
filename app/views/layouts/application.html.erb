@@ -7,10 +7,14 @@
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
-
   <body>
-    <div class="container">
-      <%= yield %>
+    <div class="arlina">
+      <%= render "shared/header" %>
+      <div class="content">
+        <%= yield %>
+        <%= render "shared/side" %>
+      </div>
+      <%= render "shared/footer" %>
     </div>
   </body>
 </html>

@@ -24,6 +24,7 @@ group :development, :test do
   gem "better_errors"
   gem "brakeman", require: false
   gem "bundler-audit"
+  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "database_cleaner"
   gem "factory_girl_rails"
   gem "guard-rspec", require: false
@@ -41,15 +42,17 @@ group :development, :test do
 end
 
 group :test do
-  gem "simplecov", require: false
-  gem "simplecov-rcov", require: false
-  gem "simplecov-json"
   gem "shoulda-matchers"
+  gem "simplecov", require: false
+  gem "simplecov-json"
+  gem "simplecov-rcov", require: false
 end
 
 gem "bootstrap-sass", "3.3.7"
+gem "config"
 gem "devise"
 gem "eslint-rails", git: "https://github.com/octoberstorm/eslint-rails"
+gem "font-awesome-rails"
 gem "rails_best_practices"
 gem "scss_lint", require: false
 gem "scss_lint_reporter_checkstyle", require: false
