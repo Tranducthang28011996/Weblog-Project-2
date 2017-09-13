@@ -1,0 +1,16 @@
+<div class="main">
+  <% @users.each do |user| %>
+    <div class="row user-list">
+      <div class="col-md-5">
+        <%= image_tag "post.jpg" ,class: "avatar" %>
+      </div>
+      <div class="col-md-7 user-details">
+        <h3><%= user.username %></h3>
+        <div class="col-md-2"><span class="fa fa-user-plus ml-05"></span>1996</div>
+        <div class="col-md-2"><span class="fa fa-user-plus ml-05"></span>1996</div>
+        <div class="col-md-2"><span class="fa fa-pencil ml-05"></span>28</div>
+        <div class="col-md-3"><button class="btn btn-defaut btn-xs"><%= t "show.follow" %></button></div>
+      </div>
+    </div>
+  <% end %>
+</div>

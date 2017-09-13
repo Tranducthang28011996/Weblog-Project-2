@@ -5,12 +5,16 @@ html {
   background: $color-background;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: transparent;
   font-family: 'Oswald', sans-serif;
   margin: 0;
   padding: 0;
-  text-transform: uppercase;
 }
 
 a,
@@ -34,7 +38,6 @@ a:visited:hover {
   max-width: 920px;
   position: relative;
   width: 100%;
-  z-index: 3;
 }
 
 .header {
@@ -295,6 +298,7 @@ a:visited:hover {
 .content {
   background: $color-white;
   margin: 0;
+  margin-top: -2% !important;
   overflow: hidden;
   padding: 20px;
   position: relative;
@@ -302,9 +306,15 @@ a:visited:hover {
 
 .main {
   background: $color-white;
+  border: 1px solid $color-gray-two;
   float: left;
   position: relative;
   width: 66%;
+}
+
+.user-list {
+  border-bottom: 1px solid $color-gray-two;
+  margin-bottom: 2%;
 }
 
 .box,
@@ -340,7 +350,18 @@ a:visited:hover {
   width: 256px;
 }
 
+.avatar {
+  background: $color-red;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+}
 
+.header-user {
+  margin-left: 40%;
+}
 
 .box:after,
 .box3:after {
@@ -391,23 +412,28 @@ $font-size: 10px;
 $line-height: 1.4;
 $lines-to-show: 6;
 
-.content-short {
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 150px;
+}
 
-  p {
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    display: block;
-    font-size: $font-size;
-    height: $font-size*$line-height*$lines-to-show;
-    -webkit-line-clamp: $lines-to-show;
-    line-height: $line-height;
-    margin: 0 auto;
-    max-width: 400px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.user-post {
+  border: 1px solid $color-gray;
+  border-radius: 3%;
+  margin: 1%;
+  width: 31.333333% !important;
+
+  .user-post-sub {
+    padding-bottom: 8px;
   }
 }
 
+.image-post-show {
+  margin-left: -3%;
+  margin-top: 5%;
+}
 
 .side {
   float: right;

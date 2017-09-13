@@ -24,6 +24,22 @@
           <%= f.email_field :email, class: "form-control", autofocus: true %>
         </div>
 
+        <%= f.label :birthday %>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-user"></span>
+          </span>
+          <%= f.date_field :birthday, class: "form-control" %>
+        </div>
+
+        <%= f.label :address %>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-user"></span>
+          </span>
+          <%= f.text_field :address, class: "form-control" %>
+        </div>
+
         <%= f.label :password %>
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div><%= t "devise.current_waiting" %> <%= resource.unconfirmed_email %></div>

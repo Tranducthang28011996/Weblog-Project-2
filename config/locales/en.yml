@@ -19,7 +19,7 @@ en:
     registration: "Sign up"
     remember_me: "Remember Password?"
     resend_confirmation: "Resend confirmation instructions"
-    sessions: "Log in"
+    sessions: "Sign-in"
     mailer:
       hello: "Hello"
       link_confirm: "Confirm my account"
@@ -49,8 +49,14 @@ en:
   index:
     about: "About"
     btn-read-more: "Read More"
+    errors: "errors"
     help: "Help"
     home: "Home"
+    search: "Search"
     user: "Users"
-    errors: "errors"
-
+  show:
+    follow: "Follow"
+    user: "User Manager"
+    modal_canel: "Cancel"
+    log_out: "Log out"
+    update_user: "Update user"
