@@ -56,7 +56,14 @@ en:
     user: "Users"
   show:
     follow: "Follow"
-    user: "User Manager"
-    modal_canel: "Cancel"
     log_out: "Log out"
+    modal_canel: "Cancel"
     update_user: "Update user"
+    user: "User Manager"
+  follow:
+    follower: "Followers"
+    following: "Followings"
+    post: "Posts"
+    unfollow: "Unfollow"
+    follow: "Follow"
+    errors: "Data is not exits!"

@@ -2,14 +2,29 @@
   <% @users.each do |user| %>
     <div class="row user-list">
       <div class="col-md-5">
-        <%= image_tag "post.jpg" ,class: "avatar" %>
+        <%= link_to user_path(user) do %>
+          <%= image_tag "post.jpg" ,class: "avatar" %>
+        <% end %>
       </div>
       <div class="col-md-7 user-details">
-        <h3><%= user.username %></h3>
-        <div class="col-md-2"><span class="fa fa-user-plus ml-05"></span>1996</div>
-        <div class="col-md-2"><span class="fa fa-user-plus ml-05"></span>1996</div>
-        <div class="col-md-2"><span class="fa fa-pencil ml-05"></span>28</div>
-        <div class="col-md-3"><button class="btn btn-defaut btn-xs"><%= t "show.follow" %></button></div>
+        <h3>
+          <%= link_to user.username, user_path(user) %>
+        </h3>
+        <div class="col-md-2" data-toggle="tooltip" data-placement="bottom" title=<%= t "follow.follower" %>>
+          <span class="fa fa-user-plus ml-05">
+            (<%= user.following.size %>)
+          </span>
+        </div>
+        <div class="col-md-2" data-toggle="tooltip" data-placement="bottom" title=<%= t "follow.follower" %>>
+          <span class="fa fa-user-plus ml-05">
+            (<%= user.followers.size %>)
+          </span>
+        </div>
+        <div class="col-md-2" data-toggle="tooltip" data-placement="bottom" title=<%= t "follow.post" %>>
+          <span class="fa fa-pencil ml-05">
+          (28)
+          </span>
+        </div>
       </div>
     </div>
   <% end %>
