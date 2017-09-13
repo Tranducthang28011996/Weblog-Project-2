@@ -3,3 +3,6 @@ email: "tieuhodo96@gmail.@gmail.com"
 reset_password: 6
 confirm: 6
 wait_time: 10
+image:
+  size: 150
+page: 5

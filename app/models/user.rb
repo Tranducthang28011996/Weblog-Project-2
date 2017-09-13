@@ -22,6 +22,8 @@ class User < ApplicationRecord
   validates :email, presence: true,
     length: {maximum: Settings.email_validate}
 
+  mount_uploader :avatar, ImageUploader
+
   def self.find_first_by_auth_conditions warden_conditions
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
