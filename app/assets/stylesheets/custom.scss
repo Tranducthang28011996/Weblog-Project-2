@@ -5,12 +5,16 @@ html {
   background: $color-background;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: transparent;
   font-family: 'Oswald', sans-serif;
   margin: 0;
   padding: 0;
-  text-transform: uppercase;
 }
 
 a,
@@ -34,7 +38,7 @@ a:visited:hover {
   max-width: 920px;
   position: relative;
   width: 100%;
-  z-index: 3;
+  /*z-index: 3;*/
 }
 
 .header {
@@ -96,117 +100,6 @@ a:visited:hover {
   height: 60px;
   left: 0;
   line-height: 60px;
-  margin: 0;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  width: 80px;
-}
-
-.menu-home {
-  background: $color-menu-backround;
-  height: 60px;
-  margin-left: 7%;
-  max-width: 920px;
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-}
-
-.menu-home:before {
-  content: '';
-  display: inline-block;
-  height: 60px;
-  left: 0;
-  margin: 0;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  width: 80px;
-}
-
-.menu-home:after {
-  color: $color-white;
-  content: 'Home';
-  display: inline-block;
-  font-size: 16px;
-  height: 60px;
-  left: 0;
-  line-height: 72px;
-  margin: 0;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  width: 80px;
-}
-
-.menu-help {
-  background: $color-menu-backround;
-  height: 60px;
-  margin-left: 14%;
-  max-width: 920px;
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-}
-
-.menu-help:before {
-  content: '';
-  display: inline-block;
-  height: 60px;
-  left: 0;
-  margin: 0;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  width: 80px;
-}
-
-.menu-help:after {
-  color: $color-white;
-  content: 'Help';
-  display: inline-block;
-  font-size: 16px;
-  height: 60px;
-  left: 0;
-  line-height: 72px;
-  margin: 0;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  width: 80px;
-}
-
-.menu-about {
-  background: $color-menu-backround;
-  height: 60px;
-  margin-left: 21%;
-  max-width: 920px;
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-}
-
-.menu-about:before {
-  content: '';
-  display: inline-block;
-  height: 60px;
-  left: 0;
-  margin: 0;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  width: 80px;
-}
-
-.menu-about:after {
-  color: $color-white;
-  content: 'About';
-  display: inline-block;
-  font-size: 16px;
-  height: 60px;
-  left: 0;
-  line-height: 72px;
   margin: 0;
   position: absolute;
   text-align: center;
@@ -295,6 +188,7 @@ a:visited:hover {
 .content {
   background: $color-white;
   margin: 0;
+  margin-top: -2% !important;
   overflow: hidden;
   padding: 20px;
   position: relative;
@@ -302,6 +196,7 @@ a:visited:hover {
 
 .main {
   background: $color-white;
+  border: 1px solid $color-gray-two;
   float: left;
   position: relative;
   width: 66%;
@@ -340,7 +235,18 @@ a:visited:hover {
   width: 256px;
 }
 
+.avatar {
+  background: $color-red;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+}
 
+.header-user {
+  margin-left: 40%;
+}
 
 .box:after,
 .box3:after {
@@ -391,7 +297,7 @@ $font-size: 10px;
 $line-height: 1.4;
 $lines-to-show: 6;
 
-.content-short {
+menu-header-short {
 
   p {
     -webkit-box-orient: vertical;
@@ -408,6 +314,29 @@ $lines-to-show: 6;
   }
 }
 
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 150px;
+}
+
+.user-post {
+  border: 1px solid $color-gray;
+  border-radius: 3%;
+  margin: 1%;
+  width: 31.333333% !important;
+
+  .user-post-sub {
+    padding-bottom: 8px;
+  }
+}
+
+.image-post-show {
+  margin-left: -3%;
+  margin-top: 5%;
+}
 
 .side {
   float: right;

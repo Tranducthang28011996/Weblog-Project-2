@@ -1,0 +1,51 @@
+<div class="main">
+  <div class="header-user">
+    <%= image_tag "post.jpg", class: "avatar"%>
+  </div>
+  <br>
+  <div class="col-md-offset-2 user-details">
+    <div class="col-md-2"><span class="fa fa-user-plus ml-05"></span>1996</div>
+    <div class="col-md-2"><span class="fa fa-user-plus ml-05"></span>1996</div>
+    <div class="col-md-2"><span class="fa fa-pencil ml-05"></span>28</div>
+    <div class="col-md-3"><button class="btn btn-defaut btn-xs"><%= t "show.follow" %></button></div>
+    <div class="col-md-3">
+      <span class="fa fa-cog" aria-hidden="true" data-toggle="modal" data-target="#myModal" >
+
+      </span>
+    </div>
+  </div>
+<br>
+<br>
+  <div class="col-md-12">
+    <div class="col-md-4 user-post">
+      <div class="user-post-sub">
+        <div class="image-post-show">
+          <%= image_tag "post.jpg", size: "150x150" %>
+        </div>
+        <div class="title-post">
+          <hr>
+        </div>
+        <div class="content-post-user truncate"></div>
+        <div>
+          <button class="btn btn-sm btn-default"><%= t "index.btn-read-more" %></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">User Manager</h4>
+      </div>
+      <div class="modal-body">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

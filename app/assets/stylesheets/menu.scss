@@ -1,31 +1,14 @@
 @import 'variables/colors';
 
-.menu-header {
-  background: $color-menu-backround;
-  float: left;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+.navbar-inverse {
+  background-color: $footer-wrapper-color !important;
+  border-color: $color-navbar;
+  border-radius: 0 !important;
+}
 
-  li {
-    float: left;
-
-    a {
-      color: $color-white;
-      display: block;
-      padding: 9px 11px;
-      text-decoration: none;
-
-      &:hover {
-        background: $color-li-hover;
-        color: $color-white;
-      }
-    }
-
-    input {
-      margin-top: 2%;
-      border-radius: 3%;
-    }
-  }
+.alert {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-bottom: -1px !important;
+  padding: 15px !important;
 }
