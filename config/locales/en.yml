@@ -10,7 +10,9 @@ en:
     back_home: "Back Home"
     btn_login: "Sign In"
     confirm: "Are you sure ?"
+    current_waiting: "Currently waiting confirmation for"
     destroy_user: "Destroy User"
+    edit: "Edit"
     label_email: "Email"
     label_password: "Password"
     min_size: "characters minimum"
@@ -32,6 +34,7 @@ en:
       welcome: "Welcome"
     password:
       btn_submit: "Change your password"
+      new_password: "New password"
       title_forgot: "Forgot your password?"
     links:
       forgot: "Forgot your password ?"
@@ -41,3 +44,5 @@ en:
       sign_up: "Sign up"
     unlock:
       resend_unlock: "Resend unlock instructions"
+  mailers:
+    subject: "User Mailer Email"
