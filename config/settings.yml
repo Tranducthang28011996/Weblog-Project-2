@@ -2,3 +2,4 @@ email_validate: 50
 email: "tieuhodo96@gmail.@gmail.com"
 reset_password: 6
 confirm: 6
+wait_time: 10
