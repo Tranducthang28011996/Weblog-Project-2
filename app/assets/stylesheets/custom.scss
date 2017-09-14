@@ -412,6 +412,22 @@ $font-size: 10px;
 $line-height: 1.4;
 $lines-to-show: 6;
 
+menu-header-short {
+  p {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    display: block;
+    font-size: $font-size;
+    height: $font-size*$line-height*$lines-to-show;
+    -webkit-line-clamp: $lines-to-show;
+    line-height: $line-height;
+    margin: 0 auto;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -577,4 +593,8 @@ $lines-to-show: 6;
     opacity: 1;
     visibility: visible;
   }
+}
+
+.setting-user{
+  cursor: pointer;
 }

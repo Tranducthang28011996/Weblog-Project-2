@@ -5,14 +5,7 @@
   </div>
   <br>
   <div class="col-md-offset-2 user-details">
-    <div class="col-md-2"><span class="fa fa-user-plus ml-05"></span>1996</div>
-    <div class="col-md-2"><span class="fa fa-user-plus ml-05"></span>1996</div>
-    <div class="col-md-2"><span class="fa fa-pencil ml-05"></span>28</div>
-    <div class="col-md-3"><button class="btn btn-defaut btn-xs"><%= t "show.follow" %></button></div>
-    <div class="col-md-3">
-      <span class="fa fa-cog" aria-hidden="true" data-toggle="modal" data-target="#myModal" style="cursor:pointer" >
-      </span>
-    </div>
+    <%= render partial: "follow_form", locals: {user: @user} %>
   </div>
 <br>
 <br>
@@ -33,6 +26,7 @@
     </div>
   </div>
 </div>
+
 <div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
