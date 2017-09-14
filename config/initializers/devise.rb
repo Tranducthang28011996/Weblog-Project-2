@@ -15,5 +15,6 @@ Devise.setup do |config|
   config.reset_password_within = Settings.reset_password.hours
   config.sign_out_via = :delete
   config.confirm_within = Settings.confirm.days
-
+  config.omniauth :facebook,
+    ENV["omniauth_facebook_app_id"], ENV["omniauth_facebook_app_secret"], scope: "email"
 end

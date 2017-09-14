@@ -54,6 +54,8 @@ gem "delayed_job_active_record"
 gem "devise"
 gem "eslint-rails", git: "https://github.com/octoberstorm/eslint-rails"
 gem "font-awesome-rails"
+gem "omniauth"
+gem "omniauth-facebook"
 gem "rails_best_practices"
 gem "scss_lint", require: false
 gem "scss_lint_reporter_checkstyle", require: false
@@ -62,3 +64,4 @@ gem "carrierwave"
 gem "cloudinary"
 gem "mini_magick"
 gem "kaminari"
+gem "figaro"

@@ -6,3 +6,5 @@ wait_time: 10
 image:
   size: 150
 page: 5
+devise_friendly_token_min: 0
+devise_friendly_token_max: 20
