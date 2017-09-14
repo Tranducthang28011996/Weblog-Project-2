@@ -1,0 +1,33 @@
+<%= render "shared/side" %>
+<div class="main">
+  <% @users.each do |user| %>
+    <div class="row user-list">
+      <div class="col-md-5">
+        <%= link_to user_path(user) do %>
+          <%= image_tag user.avatar.big_image.url ,class: "avatar" %>
+        <% end %>
+      </div>
+      <div class="col-md-7 user-details">
+        <h3>
+          <%= link_to user.username, user_path(user) %>
+        </h3>
+        <div class="col-md-2" data-toggle="tooltip" data-placement="bottom" title=<%= t "follow.follower" %>>
+          <span class="fa fa-user-plus ml-05">
+            (<%= user.following.size %>)
+          </span>
+        </div>
+        <div class="col-md-2" data-toggle="tooltip" data-placement="bottom" title=<%= t "follow.follower" %>>
+          <span class="fa fa-user-plus ml-05">
+            (<%= user.followers.size %>)
+          </span>
+        </div>
+        <div class="col-md-2" data-toggle="tooltip" data-placement="bottom" title=<%= t "follow.post" %>>
+          <span class="fa fa-pencil ml-05">
+            (<%= user.posts.size() %>)
+          </span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <%= paginate @users %>
+</div>

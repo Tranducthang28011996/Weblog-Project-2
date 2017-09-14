@@ -1,0 +1,29 @@
+<%= render "shared/side" %>
+<div class="main">
+  <div class="page">
+    <article class="post">
+      <h2 itemprop="headline"><%= @post.title %></h2>
+      <%= image_tag @post.image.url,
+        size: Settings.image_post.size %>
+      <div class="abstract" itemprop="description">
+        <p><%= raw @post.content %></p>
+      </div>
+      <footer class="post-meta">
+        <ul>
+          <li>
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+              <%= @post.created_at.strftime"#{t(".createted")} %m/%d/%Y" %>
+          </li>
+          <li>
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <%= link_to @post.user.username, user_path(@post.user) %>
+          </li>
+          <li>
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <a href="#" itemprop="articleSection"></a>
+          </li>
+        </ul>
+      </footer>
+    </article>
+  </div>
+</div>
