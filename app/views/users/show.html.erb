@@ -1,18 +1,5 @@
+<%= render "shared/profile" %>
 <div class="main">
-  <div class="header-user">
-    <%= image_tag @user.avatar.big_image.url, class: "avatar"%>
-    <% if current_user == @user %>
-      <%= content_tag :div, "", class: "upload-images setting-user",
-        data: {toggle: "modal", target: "#upload-images-user"} %>
-    <% end %>
-    <h3><%= @user.username %></h3>
-  </div>
-  <br>
-  <div class="col-md-offset-2 user-details">
-    <%= render partial: "follow_form", locals: {user: @user} %>
-  </div>
-<br>
-<br>
   <div class="col-md-12">
     <div class="col-md-4 user-post">
       <div class="user-post-sub">

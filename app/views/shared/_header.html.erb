@@ -1,20 +1,12 @@
-<div class="header"></div>
-<div class="menuwrap">
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav">
-        <li>
-          <%= link_to t("index.home"), root_path %>
-        </li>
-        <li><a href="#"><%= t "index.help" %></a></li>
-        <li><a href="#"><%= t "index.about" %></a></li>
-        <li>
-          <%= link_to t("index.user"), users_path %>
-        </li>
-      </ul>
+<div class="header">
+  <div class="logo-website" style="height: 50px">
+    <div class="col-md-8">
+      <h1><%= t "shared.logo" %></h1>
+    </div>
+    <div class="col-md-4 search-form">
       <form class="navbar-form navbar-left">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder=<%= t "index.search" %>>
+          <input type="text" class="form-control" />
           <div class="input-group-btn">
             <button class="btn btn-default" type="submit">
               <i class="glyphicon glyphicon-search"></i>
@@ -22,19 +14,36 @@
           </div>
         </div>
       </form>
+    </div>
+  </div>
+</div>
+<div class="menuwrap">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to t("index.home"), root_path, class: "font-size" %>
+        </li>
+        <li><a href="#" class = "font-size"><%= t "index.help" %></a></li>
+        <li><a href="#" class = "font-size"><%= t "index.about" %></a></li>
+        <li>
+          <%= link_to t("index.user"), users_path, class: "font-size" %>
+        </li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li>
             <%= link_to user_path(current_user) do %>
-              <span class="glyphicon glyphicon-user"></span><%= current_user.username %>
+              <span class="glyphicon glyphicon-user"></span>
+              <b class = "font-size"><%= current_user.username %></b>
             <% end %>
           </li>
-          <% else %>
-            <li>
-              <%= link_to new_user_registration_path do %>
-                <span class="glyphicon glyphicon-user"></span><%= t "devise.sessions" %>
-              <% end %>
-            </li>
+        <% else %>
+          <li>
+            <%= link_to new_user_registration_path do %>
+              <span class="glyphicon glyphicon-user"></span><%= t "devise.sessions" %>
+            <% end %>
+          </li>
         <% end %>
       </ul>
     </div>

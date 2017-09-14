@@ -1,0 +1,32 @@
+<%= render "shared/side" %>
+<div class="main">
+  <%= form_for @post do |f| %>
+    <div class="form-group">
+      <label><%= t ".title" %></label>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label><%= t ".content" %></label>
+      <%= f.cktext_area :content, value: t(".text"), id: 'sometext' %>
+    </div>
+    <div class="form-group">
+      <label><%= t ".tags" %>:</label>
+      <ul class="tags">
+        <li class="addedTag"><%= t ".tags" %>
+          <span onclick="$(this).parent().remove();" class="tagRemove">
+            <i class="fa fa-window-close" aria-hidden="true"></i>
+          </span>
+          <input type="hidden" name="tags[]" value="Tags">
+        </li>
+        <li class="tagAdd taglist">
+          <%= text_field_tag "search-field", nil ,placeholder: t("tags") %>
+        </li>
+      </ul>
+    </div>
+    <div class="form-group">
+      <label><%= t ".content" %></label>
+      <%= f.file_field :image, class: "form-control" %>
+    </div>
+    <%= f.submit class: "btn btn-default"%>
+  <% end %>
+</div>
