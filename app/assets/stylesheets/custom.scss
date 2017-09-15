@@ -348,15 +348,17 @@ a:visited:hover {
 .image-post {
   height: 169px;
   width: 256px;
+  background: $color-red;
 }
 
 .avatar {
-  background: $color-red;
+  background-image: url("post.jpg");
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
   border-radius: 50px;
   height: 100px;
   width: 100px;
+
 }
 
 .header-user {
@@ -412,7 +414,7 @@ $font-size: 10px;
 $line-height: 1.4;
 $lines-to-show: 6;
 
-menu-header-short {
+.menu-header-short {
   p {
     -webkit-box-orient: vertical;
     display: -webkit-box;
@@ -597,4 +599,63 @@ menu-header-short {
 
 .setting-user{
   cursor: pointer;
+}
+
+.upload-images,
+.box3 {
+  display: block;
+  height: 104px;
+  margin: -100px 0 20px;
+  position: relative;
+}
+
+.upload-images:last-child {
+  margin: 0;
+}
+
+.upload-images:before,
+.box3:before {
+  background-size: cover;
+  bottom: 0;
+  content: '';
+  display: inline-block;
+  height: 104px;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
+}
+
+.upload-images:after,
+.box3:after {
+  background: rgba(0, 0, 0, .4);
+  border-radius: 50%;
+  bottom: 0;
+  color: rgba(255, 255, 255, .5);
+  content: '\f030';
+  cursor: pointer;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 50px;
+  height: 100px;
+  left: 0;
+  line-height: 100px;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  transition: all .3s;
+  visibility: hidden;
+  width: 100px;
+  z-index: 2;
+}
+
+.upload-images:hover:after,
+.box3:hover:after {
+  opacity: 1;
+  visibility: visible;
 }

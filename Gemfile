@@ -58,4 +58,7 @@ gem "rails_best_practices"
 gem "scss_lint", require: false
 gem "scss_lint_reporter_checkstyle", require: false
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+gem "carrierwave"
+gem "cloudinary"
+gem "mini_magick"
+gem "kaminari"
