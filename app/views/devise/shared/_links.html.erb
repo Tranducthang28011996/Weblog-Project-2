@@ -18,9 +18,10 @@
   <%= link_to t("devise.links.receive_confirmation"), new_unlock_path(resource_name) %><br />
 <% end -%>
 
+
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "#{t("devise.links.sign_in_with")} #{OmniAuth::Utils.camelize(provider)}",
+    <%= link_to "#{t('via_login.login')} #{OmniAuth::Utils.camelize(provider)}",
       omniauth_authorize_path(resource_name, provider) %><br />
   <% end -%>
 <% end -%>

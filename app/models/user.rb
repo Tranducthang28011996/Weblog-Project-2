@@ -17,6 +17,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+  devise :omniauthable, omniauth_providers: [:facebook]
+
   enum role: [:user, :admin]
 
   validates :email, presence: true,
@@ -53,5 +55,26 @@ class User < ApplicationRecord
 
   def following? other_user
     following.include? other_user
+  end
+
+  class << self
+    def new_with_session params, session
+      super.tap do |user|
+        if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+          user.email = data["email"] if user.email.blank?
+        end
+      end
+    end
+
+    def from_omniauth auth
+      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+        user.email = auth.info.email || "facebook@gmail.com"
+        user.password = Devise.friendly_token[Settings.devise_friendly_token_min,
+          Settings.devise_friendly_token_max]
+        user.username = auth.info.name
+        user.avatar = auth.info.image
+        user.confirmed_at = Time.zone.now
+      end
+    end
   end
 end

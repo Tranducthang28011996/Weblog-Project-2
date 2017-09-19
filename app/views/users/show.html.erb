@@ -2,8 +2,8 @@
   <div class="header-user">
     <%= image_tag @user.avatar.big_image.url, class: "avatar"%>
     <% if current_user == @user %>
-      <div class="upload-images setting-user" data-toggle="modal" data-target="#upload-images-user">
-      </div>
+      <%= content_tag :div, "", class: "upload-images setting-user",
+        data: {toggle: "modal", target: "#upload-images-user"} %>
     <% end %>
     <h3><%= @user.username %></h3>
   </div>

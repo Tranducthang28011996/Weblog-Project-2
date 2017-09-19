@@ -70,3 +70,7 @@ en:
     post: "Posts"
     unfollow: "Unfollow"
     update_avatar: "Change Avatar"
+    follow: "Follow"
+    errors: "Data is not exits!"
+  via_login:
+    login: "Sign in with"
