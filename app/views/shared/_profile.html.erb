@@ -1,0 +1,20 @@
+<div class="side profile-user">
+  <div class="show-avatar">
+    <%= image_tag @user.avatar.big_image.url, class: "avatar"%>
+    <% if current_user == @user %>
+      <%= content_tag :div, "", class: "upload-images setting-user",
+        data: {toggle: "modal", target: "#upload-images-user"} %>
+    <% end %>
+    <h3>
+      <% if current_user == @user %>
+        <div class="col-md-3 setting-user">
+          <span class="fa fa-cog" aria-hidden="true"
+            data-toggle="modal" data-target="#myModal">
+          </span>
+        </div>
+        <%= @user.username %>
+      <% end %>
+    </h3>
+  </div>
+  <%= render partial: "follow_form", locals: {user: @user} %>
+</div>
