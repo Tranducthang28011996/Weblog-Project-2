@@ -1,4 +1,10 @@
 class PagesController < ApplicationController
+
+  def home
+    @posts = Post.created_sort
+      .page(params[:page]).per Settings.page
+  end
+
   def show
     if valid_page?
       render template: "pages/#{params[:page]}"

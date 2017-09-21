@@ -24,6 +24,6 @@ config/secrets.yml
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
-/public/uploads
+/public/uploads/*
 config/cloudinary.yml
 /config/application.yml
