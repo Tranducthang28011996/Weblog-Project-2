@@ -74,3 +74,12 @@ en:
     errors: "Data is not exits!"
   via_login:
     login: "Sign in with"
+  tags: "tag1,tag2,..."
+  posts:
+    new:
+      title: "Title:"
+      content: "Content:"
+      tags: "Tags"
+      text: "Some body text."
+  shared:
+    logo: "Blogger.VN"

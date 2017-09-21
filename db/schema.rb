@@ -14,11 +14,12 @@ ActiveRecord::Schema.define(version: 20170912031551) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "content"
+    t.integer "commentable_id"
+    t.string "commentable_type"
     t.bigint "user_id"
-    t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -59,7 +60,8 @@ ActiveRecord::Schema.define(version: 20170912031551) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
-    t.string "content"
+    t.text "content"
+    t.string "image"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -110,7 +112,6 @@ ActiveRecord::Schema.define(version: 20170912031551) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "comments"
   add_foreign_key "likes", "posts"
