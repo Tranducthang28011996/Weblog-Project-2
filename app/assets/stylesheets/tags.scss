@@ -1,0 +1,45 @@
+@import 'variables/colors';
+
+.tags {
+  background: none repeat scroll 0 0 $color-white;
+  display: table;
+  padding: .5em;
+  width: 100%;
+}
+
+.tags li.tag-add,
+.tags li.added-tag {
+  float: left;
+  margin: 5px .25em 0 .25em;
+}
+
+.tags li.added-tag {
+  background: none repeat scroll 0 0 $side-content3;
+  border-radius: 2px;
+  color: $color-white;
+  padding: .25em;
+}
+
+.tags input,
+li.added-tag {
+  border: 1px solid transparent;
+  border-radius: 2px;
+  box-shadow: none;
+  display: block;
+  margin-top: -23px;
+  padding: .5em;
+}
+
+span.tag-remove {
+  cursor: pointer;
+  display: inline-block;
+  padding-left: .5em;
+}
+
+span.tag-remove:hover {
+  color: $box-background;
+}
+
+.navbar-right {
+  height: 49px;
+}

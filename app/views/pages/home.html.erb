@@ -1,13 +1,26 @@
+<%= render "shared/side" %>
 <div class="main">
-  <div class="box">
-    <%= image_tag "post.jpg", class: "image-post"%>
-    <div class="post-content">
-      <h3 class="title-post"></h3>
-      <span class="hr"></span>
-      <div class="content-short">
-        <p></p>
+  <% @posts.each do |post| %>
+    <div class="box">
+      <%= image_tag post.image.big_image.url, class: "image-post" %>
+      <div class="post-content">
+        <h1 class="title-post"><%= post.title %></h1>
+        <span class="hr"></span>
+        <div class="content-short">
+          <span><%= raw post.content %></span>
+        </div>
+        <% if post.tags.present? %>
+          <% post.tags.each do |tag| %>
+            <%= tag.tag_name %>
+          <% end %>
+        <% end %>
+        <div>
+          <button class="btn btn-sm btn-default">
+            <%= t "index.btn-read-more" %>
+          </button>
+        </div>
       </div>
-      <button class="btn btn-sm btn-default"><%= t "index.btn-read-more" %></button>
     </div>
-  </div>
+  <% end %>
+  <%= paginate @posts %>
 </div>

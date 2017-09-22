@@ -57,7 +57,7 @@ a:visited:hover {
   }
 }
 
-.menuwrap {
+.menu-wrap {
   background: $color-white;
   border-top: 1px solid $color-white;
   margin: 0 20px;
@@ -319,4 +319,8 @@ $lines-to-show: 6;
 
 .search-form {
   margin-top: 14px;
+}
+
+.logo-website {
+  height: 50px;
 }
