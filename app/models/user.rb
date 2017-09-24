@@ -25,6 +25,8 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, ImageUploader
 
+  scope :search_user, lambda {|username| where("username LIKE '%#{username}%'") if username.present?}
+
   def self.find_first_by_auth_conditions warden_conditions
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)

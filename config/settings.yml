@@ -8,3 +8,9 @@ image:
 page: 5
 devise_friendly_token_min: 0
 devise_friendly_token_max: 20
+image_post:
+  width: 150
+  height: 277
+image_post:
+  size: 250 x 250
+  post_size: 150 x 150

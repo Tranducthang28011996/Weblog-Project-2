@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  background-color: $box-background !important;
   background: transparent;
   background-color: $box-background !important;
   font-family: 'Oswald', sans-serif;
@@ -46,6 +47,7 @@ a:visited:hover {
   margin: auto;
   padding: 5%;
   width: 95.7%;
+  color: $color-white;
 
   p {
     color: $color-header-p;
@@ -323,4 +325,83 @@ $lines-to-show: 6;
 
 .logo-website {
   height: 50px;
+}
+
+.content-short {
+  span {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines-to-show;
+    display: -webkit-box;
+    display: block;
+    font-size: 15px;
+    height: $font-size*$line-height*$lines-to-show;
+    line-height: $line-height;
+    margin: 0 auto;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.font-size {
+  font-size: 16px;
+}
+
+.search-form {
+  margin-top: 26px;
+}
+
+ul.ui-autocomplete {
+  border: solid 1px $back-to-top-hover;
+  cursor: default;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+
+  li {
+    background-color: $color-white;
+    border-radius: 5px;
+    border-top: solid 1px $back-to-top-hover;
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: $back-to-top-hover;
+      display: block;
+      padding: 3px;
+    }
+
+    a.ui-state-hover,
+    a.ui-state-active {
+      background-color: $back-to-top-hover;
+    }
+  }
+}
+
+.page {
+  margin: 0 auto;
+  width: 580px;
+}
+
+.post {
+  background: $color-gray-two;
+  padding: 0 0 0 0;
+}
+
+h2 a {
+  text-decoration:none;
+}
+
+.post-meta {
+  text-align: right;
+
+  ul {
+   list-style: none;
+  }
+
+  li {
+    display: inline-block;
+    margin-left: 1em;
+  }
 }

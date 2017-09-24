@@ -1,20 +1,26 @@
 <%= render "shared/profile" %>
 <div class="main">
   <div class="col-md-12">
-    <div class="col-md-4 user-post">
-      <div class="user-post-sub">
-        <div class="image-post-show">
-          <%= image_tag "post.jpg", size: "150x150" %>
-        </div>
-        <div class="title-post">
-          <hr>
-        </div>
-        <div class="content-post-user truncate"></div>
-        <div>
-          <button class="btn btn-sm btn-default"><%= t "index.btn-read-more" %></button>
+    <% @user.posts.each do |post| %>
+      <div class="col-md-4 user-post">
+        <div class="user-post-sub">
+          <div class="image-post-show">
+            <%= image_tag post.image.url, size: Settings.image_post.post_size %>
+          </div>
+          <div class="title-post truncate">
+            <%= post.title %>
+            <hr>
+          </div>
+          <div class="content-post-user truncate">
+            <%= raw post.content %>
+          </div>
+          <div>
+            <%= link_to t("index.btn-read-more"), post_path(post),
+              class: "btn btn-sm btn-default" %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
 

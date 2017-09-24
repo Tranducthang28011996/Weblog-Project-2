@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, except: :index
+  before_action :find_user, except: %i[index search]
   before_action :authenticate_user!, only: :update
 
   def index
@@ -17,6 +17,15 @@ class UsersController < ApplicationController
       flash[:success] = t "show.upload_fails"
     end
     redirect_to @user
+  end
+
+  def search
+    if params[:search][:search].present?
+      @users = User.search_user(params[:search][:search])
+        .page(params[:page]).per Settings.page
+    else
+      redirect_to root_path
+    end
   end
 
   private

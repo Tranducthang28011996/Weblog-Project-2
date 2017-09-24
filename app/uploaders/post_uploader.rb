@@ -13,6 +13,10 @@ class PostUploader < CarrierWave::Uploader::Base
   end
 
   version :big_image do
-    process resize_to_fit: [Settings.image.size , Settings.image.size]
+    process resize_to_fit: [Settings.image.size, Settings.image.size]
+  end
+
+  version :image_post do
+    process resize_to_fit: [Settings.image_post.width, Settings.image_post.height]
   end
 end
