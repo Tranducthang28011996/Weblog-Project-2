@@ -1,0 +1,16 @@
+<div id="comment-post" class="collapse">
+  <div class="list-comments">
+    <% @post.comments.each do |comment| %>
+      <%= render partial: "comments/single_comment", locals: {comment: comment} %>
+    <% end %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= form_for [@post, @post.comments.build] do |f| %>
+      <%= f.text_area :content, rows: Settings.rows,
+        class: "form-control form-add-comment", placeholder: t("comments.placehoder") %>
+        <br>
+      <%= button_tag t("comments.btn_send"), class: "btn btn-default send-message"%>
+    <% end %>
+  </div>
+</div>

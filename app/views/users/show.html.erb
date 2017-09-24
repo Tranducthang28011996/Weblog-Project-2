@@ -1,7 +1,7 @@
 <%= render "shared/profile" %>
 <div class="main">
   <div class="col-md-12">
-    <% @user.posts.each do |post| %>
+    <% @posts.each do |post| %>
       <div class="col-md-4 user-post">
         <div class="user-post-sub">
           <div class="image-post-show">
@@ -22,6 +22,7 @@
       </div>
     <% end %>
   </div>
+  <%= paginate @posts %>
 </div>
 
 <div class="modal fade" id="user-modal" role="dialog">

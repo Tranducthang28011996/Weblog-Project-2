@@ -25,8 +25,8 @@ end
 
 users = User.order(:created_at).take 6
 15.times do
-  title = Faker::Lorem.sentence 5
-  content = Faker::Lorem.sentence 500
+  title = Faker::Lorem.characters 10
+  content = Faker::Lorem.sentence 10
   image = Faker::Avatar.image("my-own-slug")
   users.each{|user| user.posts.create! content: content, title: title, image: image}
 end

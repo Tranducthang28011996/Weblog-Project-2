@@ -26,7 +26,7 @@ li.added-tag {
   border-radius: 2px;
   box-shadow: none;
   display: block;
-  margin-top: -2px;
+  margin-top: -24px;
   padding: .5em;
 }
 
@@ -42,4 +42,8 @@ span.tag-remove:hover {
 
 .navbar-right {
   height: 49px;
+}
+
+.icon-comment {
+  float: right;
 }

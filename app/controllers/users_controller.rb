@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, except: %i[index search]
+
   before_action :authenticate_user!, only: :update
 
   def index
@@ -7,7 +8,10 @@ class UsersController < ApplicationController
       .page(params[:page]).per Settings.page
   end
 
-  def show; end
+  def show
+    @posts = @user.posts.created_sort
+      .page(params[:page]).per Settings.page
+  end
 
   def update
     if current_user == @user

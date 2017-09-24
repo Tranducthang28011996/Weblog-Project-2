@@ -19,11 +19,12 @@
             <%= link_to @post.user.username, user_path(@post.user) %>
           </li>
           <li>
-            <i class="fa fa-folder-open" aria-hidden="true"></i>
-            <a href="#" itemprop="articleSection"></a>
+            <a href="#comment-post" class="btn btn-default" data-toggle="collapse">
+              <i class="fa fa-comments-o" aria-hidden="true"></i>
+            </a>
           </li>
         </ul>
       </footer>
     </article>
   </div>
-</div>
+<%= render "comments/comment" %>
