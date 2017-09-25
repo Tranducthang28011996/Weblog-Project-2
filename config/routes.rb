@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   delete "unfollow/:id", to: "relationships#destroy", as: "unfollow"
 
   resources :posts
+  resources :tags, only: :show
 end
