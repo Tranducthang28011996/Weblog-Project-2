@@ -19,7 +19,11 @@ en:
     registration: "Sign up"
     remember_me: "Remember Password?"
     resend_confirmation: "Resend confirmation instructions"
-    sessions: "Sign-in"
+    sessions:
+      user:
+        signed_in: "Signed in successfully."
+        signed_out: "Signed out successfully."
+        already_signed_out: "Signed out successfully."
     mailer:
       hello: "Hello"
       link_confirm: "Confirm my account"
@@ -83,6 +87,12 @@ en:
       title: "Title:"
     show:
       createted: "Posts on:"
+    create:
+      create_sucsees: "Create is success!"
+      create_fail: "Create is not success!"
+    update:
+      update_sucsees: "Update is success!"
+      update_fail: "Update is not success!"
   shared:
     logo: "Blogger"
     header:

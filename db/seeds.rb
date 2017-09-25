@@ -3,32 +3,34 @@ User.create! username: "Admin",
              password: "123123",
              password_confirmation: "123123",
              role: 1,
-             avatar: Faker::Avatar.image("my-own-slug", "150x150", "jpg"),
+             avatar: File.open(Rails.root.join("app", "assets",
+               "images", "seed", "1.jpg")),
              confirmed_at: Time.zone.now,
              address: Faker::Address.street_address
 
-30.times do |n|
+5.times do |n|
   name = Faker::Name.name
   email = "user-#{n+1}@gmail.com"
   password = "123123"
-  avatar = Faker::Avatar.image("my-own-slug", "150x150", "jpg")
   address = Faker::Address.street_address
   User.create! username: name,
                email: email,
                password: "123123",
                password_confirmation: "123123",
                role: 0,
-               avatar: avatar,
+               avatar: File.open(Rails.root.join("app", "assets",
+                 "images", "seed", "#{rand(1..9).to_s}.jpg")),
                confirmed_at: Time.zone.now,
                address: address
 end
 
 users = User.order(:created_at).take 6
-15.times do
+5.times do
   title = Faker::Lorem.characters 10
   content = Faker::Lorem.sentence 10
-  image = Faker::Avatar.image("my-own-slug")
-  users.each{|user| user.posts.create! content: content, title: title, image: image}
+  users.each{|user| user.posts.create! content: content, title: title,
+    image: File.open(Rails.root.join("app", "assets",
+      "images", "seed", "#{rand(1..9).to_s}.jpg"))}
 end
 
 users = User.all

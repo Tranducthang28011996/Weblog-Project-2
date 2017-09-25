@@ -18,6 +18,14 @@
           <%= link_to t("index.btn-read-more"), post_path(post),
             class: "btn btn-sm btn-default" %>
         </div>
+        <footer class="post-meta">
+          <ul>
+            <li>
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+                <%= post.created_at.strftime"#{t("posts.show.createted")} %m/%d/%Y" %>
+            </li>
+          </ul>
+      </footer>
       </div>
     </div>
   <% end %>

@@ -37,7 +37,8 @@
         <% else %>
           <li>
             <%= link_to new_user_registration_path do %>
-              <span class="glyphicon glyphicon-user"></span><%= t "devise.sessions" %>
+              <span class="glyphicon glyphicon-user"></span>
+              <%= t "devise.links.log_in" %>
             <% end %>
           </li>
         <% end %>

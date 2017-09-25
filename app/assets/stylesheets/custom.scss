@@ -247,7 +247,7 @@ $lines-to-show: 6;
 }
 
 .sidecontent3 {
-  background: $side-content3;
+  background: $side-content;
 
   span {
     display: inline-block;
@@ -270,7 +270,7 @@ $lines-to-show: 6;
 }
 
 .credit {
-  background: $back-to-top;
+  background: $color-credit;
   margin: 0;
 
   span {
