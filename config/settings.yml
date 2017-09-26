@@ -14,3 +14,14 @@ image_post:
 image_post:
   size: 250 x 250
   post_size: 150 x 150
+rows: 2
+comment:
+  content:
+    maxlength: 200
+post:
+  picture_size: 5
+  title:
+    maxlength: 20
+  content:
+    maxlength: 500
+  post_type: "Post"

@@ -16,4 +16,7 @@
 //= require jquery_ujs
 //= require ckeditor/init
 //= require jquery-ui
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
 //= require_tree .

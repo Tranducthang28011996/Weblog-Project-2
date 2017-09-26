@@ -1,0 +1,55 @@
+<li class="list-group-item" data-comment-post="<%= comment.id %>"
+  id = "list-group-item-<%= comment.id %>">
+  <b><%= comment.user.username %></b>:
+  <span class="delete-comment-post">
+    <i class="fa fa-window-close icon-comment"
+      aria-hidden="true" >
+    </i>
+  </span>
+  <span class="comment_post" id = "reply_comment_post">
+    <%= comment.content %>
+    <span class="reply_comment_post">
+      <i class="fa fa-pencil-square-o icon-comment"
+        aria-hidden="true" ">
+      </i>
+    </span>
+    <% if comment.commentable_type == Settings.post.post_type %>
+      <a href="#reply-<%= comment.id %>" data-toggle="collapse"><%= t "comments.reply" %></a>
+    <% end %>
+  </span>
+  <ul id="reply-<%= comment.id %>" class="collapse">
+    <div class="reply-comment-post-<%= comment.id %>">
+      <% comment.comments.each do |comment_reply| %>
+        <li class="list-group-item"
+          data-comment-reply="<%= comment_reply.id %>"
+          data-post-id="<%= @post.id %>"
+          id = "list-group-item-<%= comment_reply.id %>">
+          <b><%= comment_reply.user.username %></b>:
+          <span class="delete-comment-reply">
+            <i class="fa fa-window-close icon-comment"
+              aria-hidden="true" >
+            </i>
+          </span>
+          <span class="message-<%= comment_reply.id %>" id="reply_comment"
+            data-comment-reply="<%= comment_reply.id %>">
+            <%= comment_reply.content %>
+            <span class="reply_comment">
+              <i class="fa fa-pencil-square-o icon-comment"
+                aria-hidden="true" >
+              </i>
+            </span>
+          </span>
+        </li>
+      <% end %>
+    </div>
+    <br>
+    <div class="form-group">
+      <%= form_for [comment, comment.comments.build] do |f| %>
+        <%= f.text_field :content,
+          class: "form-control form-add-comment", placeholder: t("comments.placehoder") %>
+        <br>
+        <%= button_tag t("comments.btn_send"), class: "btn btn-default send-message"%>
+      <% end %>
+    </div>
+  </ul>
+</li>
