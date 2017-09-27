@@ -3,8 +3,10 @@
   <div class="page">
     <article class="post">
       <h2 itemprop="headline"><%= @post.title %></h2>
-      <%= image_tag @post.image.url,
-        size: Settings.image_post.size %>
+      <% if @post.image.present? %>
+        <%= image_tag @post.image.url,
+          size: Settings.image_post.size %>
+      <% end %>
       <div class="abstract" itemprop="description">
         <p><%= raw @post.content %></p>
       </div>
@@ -27,4 +29,5 @@
       </footer>
     </article>
   </div>
-<%= render "comments/comment" %>
+  <%= render "comments/comment" %>
+</div>

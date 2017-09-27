@@ -10,6 +10,7 @@
 .tags li.tag-add,
 .tags li.added-tag {
   float: left;
+  list-style: none;
   margin: 5px .25em 0 .25em;
 }
 
@@ -26,7 +27,7 @@ li.added-tag {
   border-radius: 2px;
   box-shadow: none;
   display: block;
-  margin-top: -24px;
+  margin-top: -2px;
   padding: .5em;
 }
 

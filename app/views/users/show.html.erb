@@ -1,12 +1,14 @@
 <%= render "shared/profile" %>
 <div class="main">
   <div class="col-md-12">
-    <% @posts.each do |post| %>
-      <div class="col-md-4 user-post">
+    <% @user.posts.each do |post| %>
+      <div class="col-md-4 user-post fade-out-post-<%= post.id %>">
         <div class="user-post-sub">
-          <div class="image-post-show">
-            <%= image_tag post.image.url, size: Settings.image_post.post_size %>
-          </div>
+          <% if post.image.present? %>
+            <div class="image-post-show">
+              <%= image_tag post.image.url, size: Settings.image_post.post_size %>
+            </div>
+          <% end %>
           <div class="title-post truncate">
             <%= post.title %>
             <hr>
@@ -14,10 +16,16 @@
           <div class="content-post-user truncate">
             <%= raw post.content %>
           </div>
-          <div>
-            <%= link_to t("index.btn-read-more"), post_path(post),
-              class: "btn btn-sm btn-default" %>
-          </div>
+          <%= link_to t("index.btn-read-more"), post_path(post),
+            class: "btn btn-sm btn-default" %>
+          <% if current_user && current_user.admin? || current_user?(post.user) %>
+            <%= link_to edit_post_path(post) do %>
+              <span class="fa fa-pencil col-md-offset-2" data-toggle="tooltip"
+              data-placement="bottom" title="Edit" >
+            <% end %>
+            <span class="fa fa-close delete-post" data-toggle="tooltip"
+              data-placement="bottom" title="Delete" data-post-id=<%= post.id %>>
+          <% end %>
         </div>
       </div>
     <% end %>

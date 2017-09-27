@@ -27,3 +27,4 @@ config/environments/*.local.yml
 /public/uploads/*
 config/cloudinary.yml
 /config/application.yml
+/app/assets/images/*
