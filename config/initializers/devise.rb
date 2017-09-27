@@ -17,4 +17,5 @@ Devise.setup do |config|
   config.confirm_within = Settings.confirm.days
   config.omniauth :facebook,
     ENV["omniauth_facebook_app_id"], ENV["omniauth_facebook_app_secret"], scope: "email"
+  config.secret_key = '05cde0c0a1e230800125c810fdc31f27774e5a786efc79efa5062143a836cb26f5d53db33fbad72c07c4c2b694a76b5086ff9992d2c0e7f6896a5651e35ec65a'
 end

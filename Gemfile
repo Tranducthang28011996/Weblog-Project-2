@@ -20,6 +20,11 @@ group :development do
   gem "web-console", ">= 3.3.0"
 end
 
+group :production do
+  gem "pg"
+  gem "rails_12factor"
+end
+
 group :development, :test do
   gem "autoprefixer-rails"
   gem "better_errors"

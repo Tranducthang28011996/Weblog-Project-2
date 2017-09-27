@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: demo_user
+  password: 12345678
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: demo_db
+
+test:
+  <<: *default
+  database: demo_db
+
+production:
+  <<: *default
+  database: demo_db
+  username: demo_user
+  password: <%= ENV['WEBLOG_DATABASE_PASSWORD'] %>

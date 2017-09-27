@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[show index update]
   post "follow/:id", to: "relationships#create", as: "follow"
   delete "unfollow/:id", to: "relationships#destroy", as: "unfollow"
-  resources :tags, only: :show
+  resources :tags
 
   resources :comments do
     resources :comments
