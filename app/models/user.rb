@@ -27,6 +27,10 @@ class User < ApplicationRecord
 
   scope :search_user, lambda {|username| where("username LIKE '%#{username}%'") if username.present?}
 
+  scope :hot_author, -> {joins(:posts)
+    .select("users.id, username", "email", "avatar","count(posts.id) AS post_count")
+    .group("users.id").order("post_count DESC").limit 4}
+
   def self.find_first_by_auth_conditions warden_conditions
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)

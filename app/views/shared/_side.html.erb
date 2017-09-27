@@ -1,7 +1,21 @@
 <div class="side">
   <div class="sticky-sidebar">
-    <h2><%= t "index.post-popular" %></h2>
-    <div class="sidecontent2 config"></div>
+    <h2><%= t "index.hot-author" %></h2>
+    <div class="sidecontent2 config">
+      <table class="table table-bordered">
+        <tbody>
+        <% User.hot_author.each do |user| %>
+          <tr>
+            <td>
+              <%= image_tag user.avatar.big_image.url ,class: "avatar-side-post" %>
+            </td>
+            <td><%= link_to user.username, user_path(user.id) %></td>
+            <td><%= user.email %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
     <h2><%= t "index.tags" %></h2>
     <div class="sidecontent3 config"></div>
   </div>

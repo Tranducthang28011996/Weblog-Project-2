@@ -143,6 +143,16 @@ a:visited:hover {
 
 }
 
+.avatar-side-post {
+  background-image: url('post.jpg');
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
+
+}
+
 .header-user {
   margin-left: 40%;
 }
@@ -240,7 +250,7 @@ $lines-to-show: 6;
 .sidecontent2,
 .sidecontent3 {
   background: $side-content;
-  height: 200px;
+  height: 269px;
   margin: 0 auto 20px;
   position: relative;
   width: 280px;

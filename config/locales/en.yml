@@ -4,7 +4,7 @@ en:
     btn-read-more: "Read More"
     credit: "Blog by TDT"
     footer: "TDT"
-    post-popular: "Post Popular"
+    hot-author: "Hot Author"
     tags: "Tags"
   devise:
     back_home: "Back Home"
